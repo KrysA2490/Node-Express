@@ -1,14 +1,18 @@
 const express = require('express');
+const morgan = require('morgan');
 
 const hostname = 'localhost';
 const port = 3000;
 
 const app = express();
+app.use(morgan('dev'));
+
+//Set up Express to serve files from public folder using middleware Express.static
+app.use(express.static(__dirname + '/public'));
+
 
 //Set up a server so it returns same response for any request
-
 app.use((req, res,) => {
-    console.log(req.headers);
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text-html')
     res.end('<html><body><h1> This is an Express Server</h1></body></html>')
