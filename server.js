@@ -11,26 +11,10 @@ app.use(morgan('dev'));
 //When server receives request with JSON formatted data in body, the bodyParser will parse data intro properties of request object so can data can be accessed more easily
 app.use(bodyParser.json());
 
+//All routes are relative to this start point
 app.use('/campsites', campsiteRouter);
 
-// app.get('/campsites/:campsiteId', (req, res) => {
-//     res.end(`Will send details of the campsite: ${req.params.campsiteId} to you`)
-// });
 
-// app.post('/campsites/:campsiteId', (req, res) => {
-//     res.statusCode = 403;
-//     res.end(`POST operation not supported on /campsites/${req.params.campsiteId}`)
-// });
-
-// app.put('/campsites/:campsiteId', (req, res) => {
-//     res.write(`Updating the campsite: ${req.params.campsiteId}\n`)
-//     res.end(`Will update the campsite: ${req.body.name}
-//         with description: ${req.body.description}`);
-// });
-
-// app.delete('/campsites/:campsiteId', (req, res) => {
-//     res.end(`Deleting campsite: ${req.params.campsiteId}`);
-// });
 
 
 //Set up Express to serve files from public folder using middleware Express.static
