@@ -57,12 +57,12 @@ campsiteRouter.route('/:campsiteId')
 //POST= creating new campsite is not allowed
 .post( (req, res) => {
     res.statusCode = 403;
-    res.end(`POST operation not supported on /campsite/${req.params.campsiteId}`);
+    res.end(`POST operation not supported on /campsites/${req.params.campsiteId}`);
 })
 
 //PUT operation is supported
 .put( (req, res) => {
-    res.write(`Updating the campsite: ${req.params.campsite}`)
+    res.write(`Updating the campsite: ${req.params.campsiteId}\n`)
     res.end(`Will update the campsite: ${req.body.name}
            with description: ${req.body.description}`)
 })
